@@ -11,11 +11,13 @@ import UIKit
 
 enum Destination {
     case citiesList
- 
+    case map(City)
     var controller: UIViewController {
         switch self {
         case .citiesList:
-        return CitiesTableController()
+            return CitiesTableController()
+        case let .map(city):
+            return MapViewController(with: city)
         }
     }
 }

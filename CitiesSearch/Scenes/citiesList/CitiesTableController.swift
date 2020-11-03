@@ -44,6 +44,10 @@ extension CitiesTableController {
         cell.setData(for: dataList[indexPath.row])
         return cell
     }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        AppNavigator.shared.push(.map(dataList[indexPath.row]))
+    }
 }
 
 // MARK: - UISearchResultsUpdating
