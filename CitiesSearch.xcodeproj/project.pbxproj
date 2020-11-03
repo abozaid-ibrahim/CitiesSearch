@@ -32,6 +32,7 @@
 		6C67DFCC2551DA4800F08F37 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C67DF962551D22F00F08F37 /* cities.json */; };
 		6C85D9F52551DDFE00DF46F0 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C85D9F42551DDFE00DF46F0 /* Trie.swift */; };
 		6C85D9F8255202DB00DF46F0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C85D9F72552024300DF46F0 /* MapViewController.swift */; };
+		6C85D9FA25521B5A00DF46F0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6C85D9F925521B5A00DF46F0 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		6C67DFCA2551D63A00F08F37 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		6C85D9F42551DDFE00DF46F0 /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
 		6C85D9F72552024300DF46F0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		6C85D9F925521B5A00DF46F0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		6C67DF682551D19200F08F37 = {
 			isa = PBXGroup;
 			children = (
+				6C85D9F925521B5A00DF46F0 /* README.md */,
 				6C67DF732551D19200F08F37 /* CitiesSearch */,
 				6C67DF8A2551D19400F08F37 /* CitiesSearchTests */,
 				6C67DF722551D19200F08F37 /* Products */,
@@ -312,6 +315,7 @@
 			files = (
 				6C67DFCC2551DA4800F08F37 /* cities.json in Resources */,
 				6C67DF812551D19300F08F37 /* LaunchScreen.storyboard in Resources */,
+				6C85D9FA25521B5A00DF46F0 /* README.md in Resources */,
 				6C67DF7E2551D19300F08F37 /* Preview Assets.xcassets in Resources */,
 				6C67DF7B2551D19300F08F37 /* Assets.xcassets in Resources */,
 			);
