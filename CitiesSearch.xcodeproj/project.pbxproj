@@ -38,6 +38,8 @@
 		6C67DF872551D19400F08F37 /* CitiesSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CitiesSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C67DF8B2551D19400F08F37 /* CitiesSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesSearchTests.swift; sourceTree = "<group>"; };
 		6C67DF8D2551D19400F08F37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C67DF962551D22F00F08F37 /* cities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+		6C67DF972551D22F00F08F37 /* InstructionsForTheTest.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = InstructionsForTheTest.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +81,10 @@
 		6C67DF732551D19200F08F37 /* CitiesSearch */ = {
 			isa = PBXGroup;
 			children = (
-				6C67DF742551D19200F08F37 /* AppDelegate.swift */,
-				6C67DF762551D19200F08F37 /* SceneDelegate.swift */,
-				6C67DF782551D19200F08F37 /* ContentView.swift */,
-				6C67DF7A2551D19300F08F37 /* Assets.xcassets */,
-				6C67DF7F2551D19300F08F37 /* LaunchScreen.storyboard */,
-				6C67DF822551D19300F08F37 /* Info.plist */,
+				6C67DF992551D28100F08F37 /* Scenes */,
+				6C67DF982551D26B00F08F37 /* SupportingFiles */,
+				6C67DF962551D22F00F08F37 /* cities.json */,
+				6C67DF972551D22F00F08F37 /* InstructionsForTheTest.md */,
 				6C67DF7C2551D19300F08F37 /* Preview Content */,
 			);
 			path = CitiesSearch;
@@ -105,6 +105,34 @@
 				6C67DF8D2551D19400F08F37 /* Info.plist */,
 			);
 			path = CitiesSearchTests;
+			sourceTree = "<group>";
+		};
+		6C67DF982551D26B00F08F37 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				6C67DF742551D19200F08F37 /* AppDelegate.swift */,
+				6C67DF762551D19200F08F37 /* SceneDelegate.swift */,
+				6C67DF782551D19200F08F37 /* ContentView.swift */,
+				6C67DF7A2551D19300F08F37 /* Assets.xcassets */,
+				6C67DF7F2551D19300F08F37 /* LaunchScreen.storyboard */,
+				6C67DF822551D19300F08F37 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		6C67DF992551D28100F08F37 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				6C67DF9A2551D28B00F08F37 /* citiesList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		6C67DF9A2551D28B00F08F37 /* citiesList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = citiesList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,7 +394,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CitiesSearch/Preview Content\"";
 				DEVELOPMENT_TEAM = 475YN7ANSF;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = CitiesSearch/Info.plist;
+				INFOPLIST_FILE = CitiesSearch/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -386,7 +414,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CitiesSearch/Preview Content\"";
 				DEVELOPMENT_TEAM = 475YN7ANSF;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = CitiesSearch/Info.plist;
+				INFOPLIST_FILE = CitiesSearch/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
