@@ -25,10 +25,10 @@ final class CitiesTableController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Discover"
-        view.backgroundColor = .white
         tableView.tableFooterView = ActivityIndicatorFooterView()
         tableView.register(CityTableCell.self, forCellReuseIdentifier: CityTableCell.identifier)
         bindToViewModel()
+        setupSearchBar()
         viewModel.search(for: "")
     }
 }
@@ -72,11 +72,6 @@ private extension CitiesTableController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
-//           viewModel.isSearchLoading
-//               .observeOn(MainScheduler.instance)
-//               .subscribe(onNext: { [unowned searchController] in
-//                   searchController.searchBar.isLoading = $0
-//               }).disposed(by: disposeBag)
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }

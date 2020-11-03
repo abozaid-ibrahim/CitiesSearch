@@ -10,8 +10,8 @@ import Foundation
 struct City: Decodable {
     let name: String
     let id: Int
-    let country: String?
-    let coord: Coord?
+    let country: String
+    let coord: Coord
 
     enum CodingKeys: String, CodingKey {
         case country, name
@@ -21,5 +21,10 @@ struct City: Decodable {
 }
 
 struct Coord: Codable {
-    let lon, lat: Double?
+    let lon, lat: Double
+}
+
+extension City {
+    var address: String { "\(name), \(country)" }
+    var location: String { "\(coord.lat), \(coord.lon)" }
 }
