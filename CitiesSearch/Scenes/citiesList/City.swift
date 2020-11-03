@@ -11,7 +11,7 @@ struct City: Decodable {
     let name: String
     let id: Int
     let country: String
-    let coord: Coord?
+    let coord: Coordinate?
 
     enum CodingKeys: String, CodingKey {
         case country, name
@@ -20,7 +20,7 @@ struct City: Decodable {
     }
 }
 
-struct Coord: Codable {
+struct Coordinate: Codable {
     let lon, lat: Double
 }
 

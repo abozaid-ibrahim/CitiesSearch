@@ -57,7 +57,7 @@
 		6C67DF8B2551D19400F08F37 /* CitiesSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesSearchTests.swift; sourceTree = "<group>"; };
 		6C67DF8D2551D19400F08F37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C67DF962551D22F00F08F37 /* cities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
-		6C67DF972551D22F00F08F37 /* InstructionsForTheTest.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = InstructionsForTheTest.md; sourceTree = "<group>"; };
+		6C67DF972551D22F00F08F37 /* Challenge.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Challenge.md; sourceTree = "<group>"; };
 		6C67DF9D2551D3D800F08F37 /* UITableView+Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cell.swift"; sourceTree = "<group>"; };
 		6C67DF9E2551D3D800F08F37 /* UIViewController+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Error.swift"; sourceTree = "<group>"; };
 		6C67DF9F2551D3D800F08F37 /* Bundle+Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Decoder.swift"; sourceTree = "<group>"; };
@@ -122,8 +122,6 @@
 				6C67DFAA2551D4C200F08F37 /* Modules */,
 				6C67DF992551D28100F08F37 /* Scenes */,
 				6C67DF982551D26B00F08F37 /* SupportingFiles */,
-				6C67DF962551D22F00F08F37 /* cities.json */,
-				6C67DF972551D22F00F08F37 /* InstructionsForTheTest.md */,
 				6C67DF7C2551D19300F08F37 /* Preview Content */,
 			);
 			path = CitiesSearch;
@@ -149,6 +147,7 @@
 		6C67DF982551D26B00F08F37 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				6C67DF962551D22F00F08F37 /* cities.json */,
 				6C67DF742551D19200F08F37 /* AppDelegate.swift */,
 				6C67DF762551D19200F08F37 /* SceneDelegate.swift */,
 				6C67DF7A2551D19300F08F37 /* Assets.xcassets */,
