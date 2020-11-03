@@ -51,10 +51,10 @@ This application uses the Model-View-ViewModel (refered to as MVVM) UI architect
 
 #### screen shots:
 
-![Search (dark) scene](https://github.com/abuzeid-ibrahim/SchipholAirport/blob/master/CitiesSearch/Screenshots/search_result_dark.png?raw=true)
-![Results (dark) scene](https://github.com/abuzeid-ibrahim/SchipholAirport/blob/master/CitiesSearch/Screenshots/search_dark.png?raw=true)
-![Map (dark) scene](https://github.com/abuzeid-ibrahim/SchipholAirport/blob/master/CitiesSearch/Screenshots/map_dark.png?raw=true)
+![Search (dark) scene](https://github.com/abuzeid-ibrahim/CitiesSearch/blob/master/Screenshots/search_result_dark.png?raw=true)
+![Results (dark) scene](https://github.com/abuzeid-ibrahim/CitiesSearch/blob/master/Screenshots/search_dark.png?raw=true)
+![Map (dark) scene](https://github.com/abuzeid-ibrahim/CitiesSearch/blob/master/Screenshots/map_dark.png?raw=true)
 
-![Search scene](https://github.com/abuzeid-ibrahim/SchipholAirport/blob/master/CitiesSearch/Screenshots/search.png?raw=true)
-![Map scene](https://github.com/abuzeid-ibrahim/SchipholAirport/blob/master/CitiesSearch/Screenshots/map.png?raw=true)
-![Results scene](https://github.com/abuzeid-ibrahim/SchipholAirport/blob/master/CitiesSearch/Screenshots/search_result.png?raw=true)
+![Search scene](https://github.com/abuzeid-ibrahim/CitiesSearch/blob/master/Screenshots/search.png?raw=true)
+![Map scene](https://github.com/abuzeid-ibrahim/CitiesSearch/blob/master/Screenshots/map.png?raw=true)
+![Results scene](https://github.com/abuzeid-ibrahim/CitiesSearch/blob/master/Screenshots/search_result.png?raw=true)
