@@ -1,6 +1,6 @@
 //
 //  AirportsViewModel.swift
-//  SchipholApp
+//  CitiesSearch
 //
 //  Created by abuzeid on 30.10.20.
 //  Copyright © 2020 abuzeid. All rights reserved.
@@ -20,7 +20,7 @@ final class CitiesViewModel: CitiesViewModelType {
     let citiesList: Observable<[City]> = .init([])
     let isLoading: Observable<Bool> = .init(false)
     let error: Observable<String?> = .init(nil)
-
+    let dataContainer: Trie = .init()
     init(citiesLoader: CitiesDataSource = CitiesLocalLoader()) {
         self.citiesLoader = citiesLoader
     }
@@ -32,6 +32,7 @@ final class CitiesViewModel: CitiesViewModelType {
             self.citiesLoader.loadCities { data in
                 switch data {
                 case let .success(response):
+//                    response.forEach{}
                     self.citiesList.next(response)
                 case let .failure(error):
                     self.error.next(error.localizedDescription)
