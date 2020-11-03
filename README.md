@@ -47,7 +47,7 @@ This application uses the Model-View-ViewModel (refered to as MVVM) UI architect
 
 ### Points to improve:
 - Improve code coverage
-
+- Use swiftlint
 
 #### screen shots:
 
