@@ -29,7 +29,6 @@ final class CitiesTableController: UITableViewController {
         tableView.register(CityTableCell.self, forCellReuseIdentifier: CityTableCell.identifier)
         bindToViewModel()
         setupSearchBar()
-        viewModel.search(for: "")
     }
 }
 
@@ -52,7 +51,7 @@ extension CitiesTableController {
 extension CitiesTableController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard searchController.isActive else {
-//            viewModel.searchCanceled()
+            viewModel.searchCanceled()
             return
         }
         guard let text = searchController.searchBar.text else { return }

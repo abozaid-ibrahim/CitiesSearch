@@ -9,11 +9,12 @@
 import Foundation
 
 /// A node in the trie
-class TrieNode<T: Hashable> {
+final class TrieNode<T: Hashable> {
   var value: T?
   weak var parentNode: TrieNode?
   var children: [T: TrieNode] = [:]
   var isTerminating = false
+    var city:City?
   var isLeaf: Bool {
     return children.count == 0
   }
@@ -42,7 +43,7 @@ class TrieNode<T: Hashable> {
 
 /// A trie data structure containing words.  Each node is a single
 /// character of a word.
-class Trie: NSObject, NSCoding {
+final class Trie: NSObject, NSCoding {
   typealias Node = TrieNode<Character>
   /// The number of words in the trie
   public var count: Int {
@@ -53,7 +54,7 @@ class Trie: NSObject, NSCoding {
     return wordCount == 0
   }
   /// All words currently in the trie
-  public var words: [String] {
+  public var words: [City?] {
     return wordsInSubtrie(rootNode: root, partialWord: "")
   }
   fileprivate let root: Node
@@ -73,9 +74,9 @@ class Trie: NSObject, NSCoding {
   /// - Parameter decoder: Decodes the archive
   required convenience init?(coder decoder: NSCoder) {
     self.init()
-    let words = decoder.decodeObject(forKey: "words") as? [String]
-    for word in words! {
-      self.insert(word: word)
+    let cities = decoder.decodeObject(forKey: "words") as? [City]
+    for word in cities! {
+      self.insert(city: word)
     }
   }
 
@@ -94,7 +95,8 @@ extension Trie {
   /// there is no change.
   ///
   /// - Parameter word: the word to be inserted.
-  func insert(word: String) {
+  func insert(city: City) {
+    let word = city.name
     guard !word.isEmpty else {
       return
     }
@@ -108,11 +110,12 @@ extension Trie {
       }
     }
     // Word already present?
-    guard !currentNode.isTerminating else {
+    if currentNode.isTerminating  {
       return
     }
     wordCount += 1
     currentNode.isTerminating = true
+    currentNode.city = city
   }
 
   /// Determines whether a word is in the trie.
@@ -215,14 +218,14 @@ extension Trie {
   ///   - rootNode: the root node of the subtrie
   ///   - partialWord: the letters collected by traversing to this node
   /// - Returns: the words in the subtrie
-  fileprivate func wordsInSubtrie(rootNode: Node, partialWord: String) -> [String] {
-    var subtrieWords = [String]()
+  fileprivate func wordsInSubtrie(rootNode: Node, partialWord: String) -> [City?] {
+    var subtrieWords = [City?]()
     var previousLetters = partialWord
     if let value = rootNode.value {
       previousLetters.append(value)
     }
     if rootNode.isTerminating {
-      subtrieWords.append(previousLetters)
+        subtrieWords.append(rootNode.city)
     }
     for childNode in rootNode.children.values {
       let childWords = wordsInSubtrie(rootNode: childNode, partialWord: previousLetters)
@@ -237,15 +240,16 @@ extension Trie {
   /// - Parameters:
   ///   - prefix: the letters for word prefix
   /// - Returns: the words in the subtrie that start with prefix
-  func findWordsWithPrefix(prefix: String) -> [String] {
-    var words = [String]()
+  func findWordsWithPrefix(prefix: String) -> [City?] {
+    var words = [City?]()
     let prefixLowerCased = prefix.lowercased()
     if let lastNode = findLastNodeOf(word: prefixLowerCased) {
       if lastNode.isTerminating {
-        words.append(prefixLowerCased)
+        words.append(lastNode.city)
       }
       for childNode in lastNode.children.values {
         let childWords = wordsInSubtrie(rootNode: childNode, partialWord: prefixLowerCased)
+        
         words += childWords
       }
     }
