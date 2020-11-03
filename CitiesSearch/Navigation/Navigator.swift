@@ -15,8 +15,7 @@ final class AppNavigator {
     private init() {}
 
     func set(window: UIWindow) {
-        AppNavigator.navigator = UINavigationController(rootViewController: Destination.mainTab.controller)
-        AppNavigator.navigator.setNavigationBarHidden(true, animated: true)
+        AppNavigator.navigator = UINavigationController(rootViewController: Destination.citiesList.controller)
         window.rootViewController = AppNavigator.navigator
         window.makeKeyAndVisible()
     }

@@ -12,7 +12,7 @@ public typealias AlertAction = (title: String, action: AnyAction)
 public extension UIViewController {
     func show(error: String) {
         let alert = UIAlertController(title: nil, message: error, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: Str.cancel, style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
 
@@ -25,7 +25,7 @@ public extension UIViewController {
             let settingsAction = UIAlertAction(title: action.title, style: .default) { _ in action.action() }
             alertController.addAction(settingsAction)
         }
-        let cancelAction = UIAlertAction(title: Str.cancel, style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         alertController.addAction(cancelAction)
 
         present(alertController, animated: true, completion: nil)
