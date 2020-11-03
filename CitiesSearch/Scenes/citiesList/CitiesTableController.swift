@@ -14,7 +14,7 @@ final class CitiesTableController: UITableViewController {
 
     init(with viewModel: CitiesViewModelType = CitiesViewModel()) {
         self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init(style: .grouped)
     }
 
     @available(*, unavailable)
@@ -24,9 +24,7 @@ final class CitiesTableController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Discover"
-        tableView.tableFooterView = ActivityIndicatorFooterView()
-        tableView.register(CityTableCell.self, forCellReuseIdentifier: CityTableCell.identifier)
+        setup()
         bindToViewModel()
         setupSearchBar()
     }
@@ -75,8 +73,10 @@ private extension CitiesTableController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.isTranslucent = false
         navigationItem.searchController = searchController
-        definesPresentationContext = true
+        navigationItem.hidesSearchBarWhenScrolling = false
+
     }
 
     func bindToViewModel() {
@@ -93,5 +93,12 @@ private extension CitiesTableController {
             guard let self = self, let msg = error else { return }
             self.show(error: msg)
         }
+    }
+
+    func setup() {
+        title = "City Finder"
+        tableView.tableFooterView = ActivityIndicatorFooterView()
+        tableView.register(CityTableCell.self, forCellReuseIdentifier: CityTableCell.identifier)
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }

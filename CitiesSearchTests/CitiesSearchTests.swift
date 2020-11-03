@@ -42,7 +42,7 @@ final class CitiesSearchTests: XCTestCase {
                 exp.fulfill()
             }
         })
-        waitForExpectations(timeout: 0.2, handler: nil)
+        waitForExpectations(timeout: 0.02, handler: nil)
     }
 
     func testPerformancePrebaringData() throws {

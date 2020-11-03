@@ -11,7 +11,7 @@ import UIKit
 
 final class MapViewController: UIViewController {
     private let mapView = MKMapView()
-    private let mapDistanceMeters = Double(100000)
+    private let mapDistanceMeters = Double(10000)
     private let city: City
     init(with city: City) {
         self.city = city
