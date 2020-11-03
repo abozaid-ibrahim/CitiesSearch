@@ -11,7 +11,7 @@ struct City: Decodable {
     let name: String
     let id: Int
     let country: String
-    let coord: Coord
+    let coord: Coord?
 
     enum CodingKeys: String, CodingKey {
         case country, name
@@ -26,5 +26,9 @@ struct Coord: Codable {
 
 extension City {
     var address: String { "\(name), \(country)" }
-    var location: String { "\(coord.lat), \(coord.lon)" }
+    var location: String? {
+        guard let lat = coord?.lat,
+            let lon = coord?.lon else { return .none }
+        return "\(lat), \(lon)"
+    }
 }
