@@ -20,13 +20,13 @@ struct City: Decodable {
     }
 }
 
-extension City: Equatable,Hashable {
+extension City: Hashable {
     static func == (lhs: City, rhs: City) -> Bool {
         return lhs.id == rhs.id
     }
 }
 
-struct Coordinate: Codable,Hashable {
+struct Coordinate: Codable, Hashable {
     let lon, lat: Double
 }
 

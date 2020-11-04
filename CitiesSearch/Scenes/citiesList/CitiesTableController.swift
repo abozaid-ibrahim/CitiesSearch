@@ -70,12 +70,12 @@ private extension CitiesTableController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
         searchController.searchBar.isTranslucent = false
-        navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
-        definesPresentationContext = true
         viewModel.isLoading.subscribe { [weak searchController] isLoading in
             searchController?.searchBar.isLoading = isLoading
         }
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        definesPresentationContext = true
     }
 
     func bindToViewModel() {

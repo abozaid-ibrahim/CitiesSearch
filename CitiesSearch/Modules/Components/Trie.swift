@@ -77,8 +77,8 @@ final class Trie: NSObject, NSCoding {
     /// - Parameter decoder: Decodes the archive
     required convenience init?(coder decoder: NSCoder) {
         self.init()
-        let cities = decoder.decodeObject(forKey: "cities") as? [City]
-        for word in cities! {
+        guard let cities = decoder.decodeObject(forKey: "cities") as? [City] else{return}
+        for word in cities {
             insert(city: word)
         }
     }

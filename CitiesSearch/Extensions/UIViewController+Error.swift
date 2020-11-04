@@ -15,19 +15,4 @@ public extension UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
-
-    func show(title: String? = nil, error: String?, actions: [AlertAction] = []) {
-        let alertController = UIAlertController(title: title,
-                                                message: error,
-                                                preferredStyle: .alert)
-
-        for action in actions {
-            let settingsAction = UIAlertAction(title: action.title, style: .default) { _ in action.action() }
-            alertController.addAction(settingsAction)
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-        alertController.addAction(cancelAction)
-
-        present(alertController, animated: true, completion: nil)
-    }
 }
