@@ -4,6 +4,68 @@
 <dict>
 	<key>runDestinationsByUUID</key>
 	<dict>
+		<key>1A0BF2BA-B159-4DFF-B744-E452FF0A48D7</key>
+		<dict>
+			<key>localComputer</key>
+			<dict>
+				<key>busSpeedInMHz</key>
+				<integer>100</integer>
+				<key>cpuCount</key>
+				<integer>1</integer>
+				<key>cpuKind</key>
+				<string>Quad-Core Intel Core i7</string>
+				<key>cpuSpeedInMHz</key>
+				<integer>2600</integer>
+				<key>logicalCPUCoresPerPackage</key>
+				<integer>8</integer>
+				<key>modelCode</key>
+				<string>MacBookPro13,3</string>
+				<key>physicalCPUCoresPerPackage</key>
+				<integer>4</integer>
+				<key>platformIdentifier</key>
+				<string>com.apple.platform.macosx</string>
+			</dict>
+			<key>targetArchitecture</key>
+			<string>x86_64</string>
+			<key>targetDevice</key>
+			<dict>
+				<key>modelCode</key>
+				<string>iPad7,12</string>
+				<key>platformIdentifier</key>
+				<string>com.apple.platform.iphonesimulator</string>
+			</dict>
+		</dict>
+		<key>8B304BDF-E533-4F69-AB6D-62081D6EB5DC</key>
+		<dict>
+			<key>localComputer</key>
+			<dict>
+				<key>busSpeedInMHz</key>
+				<integer>100</integer>
+				<key>cpuCount</key>
+				<integer>1</integer>
+				<key>cpuKind</key>
+				<string>Quad-Core Intel Core i7</string>
+				<key>cpuSpeedInMHz</key>
+				<integer>2600</integer>
+				<key>logicalCPUCoresPerPackage</key>
+				<integer>8</integer>
+				<key>modelCode</key>
+				<string>MacBookPro13,3</string>
+				<key>physicalCPUCoresPerPackage</key>
+				<integer>4</integer>
+				<key>platformIdentifier</key>
+				<string>com.apple.platform.macosx</string>
+			</dict>
+			<key>targetArchitecture</key>
+			<string>x86_64</string>
+			<key>targetDevice</key>
+			<dict>
+				<key>modelCode</key>
+				<string>iPhone12,1</string>
+				<key>platformIdentifier</key>
+				<string>com.apple.platform.iphonesimulator</string>
+			</dict>
+		</dict>
 		<key>9F18C773-2B6E-4622-AA89-FA4D5D74DDDA</key>
 		<dict>
 			<key>localComputer</key>

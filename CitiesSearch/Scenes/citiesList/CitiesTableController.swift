@@ -14,7 +14,7 @@ final class CitiesTableController: UITableViewController {
 
     init(with viewModel: CitiesViewModelType = CitiesViewModel()) {
         self.viewModel = viewModel
-        super.init(style: .grouped)
+        super.init(style: .plain)
     }
 
     @available(*, unavailable)

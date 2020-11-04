@@ -36,16 +36,19 @@ final class CitiesViewModel: CitiesViewModelType {
     }
 
     func search(for city: String) {
-        guard !city.isEmpty else { return }
-        isLoading.next(true)
-        guard isDataReady else {
-            pendingSearch = city
-            return
+        DispatchQueue.global().async { [weak self] in
+            guard let self = self, !city.isEmpty else { return }
+            self.isLoading.next(true)
+            guard self.isDataReady else {
+                self.pendingSearch = city
+                return
+            }
+            let cities = self.dataContainer.findWordsWithPrefix(prefix: city)
+                .compactMap { $0 }
+                .sorted()
+            self.citiesList.next(cities)
+            self.isLoading.next(false)
         }
-        let cities = dataContainer.findWordsWithPrefix(prefix: city)
-            .compactMap { $0 }
-        citiesList.next(cities)
-        isLoading.next(false)
     }
 
     func searchCanceled() {
@@ -76,5 +79,11 @@ private extension CitiesViewModel {
                 self.isDataReady = true
             }
         }
+    }
+}
+
+extension Array where Element == City {
+    func sorted() -> [City] {
+        return sorted { ($0.name, $0.country) < ($1.name, $1.country) }
     }
 }

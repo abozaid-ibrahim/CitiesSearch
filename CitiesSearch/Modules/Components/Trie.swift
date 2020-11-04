@@ -14,7 +14,7 @@ final class TrieNode<T: Hashable> {
     weak var parentNode: TrieNode?
     var children: [T: TrieNode] = [:]
     var isTerminating = false
-    var city: City?
+    var cities: Set<City>?
     var isLeaf: Bool {
         return children.count == 0
     }
@@ -100,7 +100,7 @@ extension Trie {
     ///
     /// - Parameter word: the word to be inserted.
     func insert(city: City) {
-        let word = city.name
+        let word = city.address
         guard !word.isEmpty else {
             return
         }
@@ -113,13 +113,14 @@ extension Trie {
                 currentNode = currentNode.children[character]!
             }
         }
+        wordCount += 1
         // Word already present?
         if currentNode.isTerminating {
+            currentNode.cities?.insert(city)
             return
         }
-        wordCount += 1
         currentNode.isTerminating = true
-        currentNode.city = city
+        currentNode.cities = .init(arrayLiteral: city)
     }
 
     /// Determines whether a word is in the trie.
@@ -229,7 +230,7 @@ extension Trie {
             previousLetters.append(value)
         }
         if rootNode.isTerminating {
-            subtrieWords.append(rootNode.city)
+            subtrieWords.append(contentsOf: rootNode.cities ?? [])
         }
         for childNode in rootNode.children.values {
             let childWords = wordsInSubtrie(rootNode: childNode, partialWord: previousLetters)
@@ -249,7 +250,7 @@ extension Trie {
         let prefixLowerCased = prefix.lowercased()
         if let lastNode = findLastNodeOf(word: prefixLowerCased) {
             if lastNode.isTerminating {
-                words.append(lastNode.city)
+                words.append(contentsOf: lastNode.cities ?? [])
             }
             for childNode in lastNode.children.values {
                 let childWords = wordsInSubtrie(rootNode: childNode, partialWord: prefixLowerCased)
