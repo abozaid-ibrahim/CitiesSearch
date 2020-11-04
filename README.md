@@ -45,9 +45,16 @@ This application uses the Model-View-ViewModel (refered to as MVVM) UI architect
 ### Scenes
 - Group of app scenes.
 
-### Points to improve:
+### Points to improve
 - Improve code coverage
 - Use swiftlint
+
+### Solution details,
+- decode data from json file and save it in array
+- used Trie data structre to save all cities
+  Using Trie will need time proportional to M * log N, where M is maximum string length and N is number of keys in tree. so we can search the key in O(M) time.
+
+ - https://en.wikipedia.org/wiki/Trie
 
 #### screen shots:
 
