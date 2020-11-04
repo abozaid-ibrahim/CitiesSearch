@@ -64,10 +64,6 @@ extension CitiesTableController: UISearchResultsUpdating {
 // MARK: - Private
 
 private extension CitiesTableController {
-    var indicator: ActivityIndicatorFooterView? {
-        return tableView.tableFooterView as? ActivityIndicatorFooterView
-    }
-
     func setupSearchBar() {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
@@ -76,7 +72,10 @@ private extension CitiesTableController {
         searchController.searchBar.isTranslucent = false
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
-
+        definesPresentationContext = true
+        viewModel.isLoading.subscribe { [weak searchController] isLoading in
+            searchController?.searchBar.isLoading = isLoading
+        }
     }
 
     func bindToViewModel() {
@@ -84,11 +83,7 @@ private extension CitiesTableController {
             self?.dataList = data
             self?.tableView.reloadData()
         }
-        viewModel.isLoading.subscribe { [weak self] isLoading in
-            guard let self = self else { return }
-            self.tableView.sectionFooterHeight = isLoading ? 80 : 0
-            self.indicator?.set(isLoading: isLoading)
-        }
+
         viewModel.error.subscribe { [weak self] error in
             guard let self = self, let msg = error else { return }
             self.show(error: msg)
@@ -97,7 +92,7 @@ private extension CitiesTableController {
 
     func setup() {
         title = "City Finder"
-        tableView.tableFooterView = ActivityIndicatorFooterView()
+        tableView.tableFooterView = UIView()
         tableView.register(CityTableCell.self, forCellReuseIdentifier: CityTableCell.identifier)
         navigationController?.navigationBar.prefersLargeTitles = true
     }
